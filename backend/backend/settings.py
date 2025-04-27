@@ -70,6 +70,15 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "corsheaders",
+    "delivery_order_details",
+    "delivery_order",
+    "external_inventory",
+    "inventory",
+    "invoice_details",
+    "invoice",
+    "item_list",
+    "project",
+    "boq",
 ]
 
 MIDDLEWARE = [
