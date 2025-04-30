@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -11,6 +8,9 @@ from .serializers import  NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Note
 from django.contrib.auth.models import User
+
+# Create your views here.
+
 
 class RegisterView(APIView):
     def post(self, request):

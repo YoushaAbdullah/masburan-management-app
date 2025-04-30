@@ -1,0 +1,56 @@
+2025-04-30 22:22:02.940 +08 [16066] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:22:02.943 +08 [16066] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:22:02.943 +08 [16066] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:22:02.943 +08 [16066] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:22:02.943 +08 [16066] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:22:02.943 +08 [16066] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:22:02.943 +08 [16066] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:22:02.944 +08 [16066] LOG:  database system is shut down
+2025-04-30 22:22:08.145 +08 [16093] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:22:08.148 +08 [16093] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:22:08.148 +08 [16093] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:22:08.148 +08 [16093] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:22:08.148 +08 [16093] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:22:08.148 +08 [16093] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:22:08.148 +08 [16093] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:22:08.149 +08 [16093] LOG:  database system is shut down
+2025-04-30 22:27:43.967 +08 [16256] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:27:43.970 +08 [16256] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:27:43.970 +08 [16256] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:27:43.970 +08 [16256] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:27:43.970 +08 [16256] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:27:43.970 +08 [16256] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:27:43.970 +08 [16256] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:27:43.971 +08 [16256] LOG:  database system is shut down
+2025-04-30 22:31:39.093 +08 [16645] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:31:39.097 +08 [16645] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:31:39.097 +08 [16645] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:31:39.097 +08 [16645] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:31:39.097 +08 [16645] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:31:39.097 +08 [16645] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:31:39.097 +08 [16645] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:31:39.099 +08 [16645] LOG:  database system is shut down
+2025-04-30 22:36:18.739 +08 [16857] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:36:18.743 +08 [16857] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:36:18.743 +08 [16857] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:36:18.743 +08 [16857] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:36:18.743 +08 [16857] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:36:18.743 +08 [16857] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:36:18.743 +08 [16857] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:36:18.744 +08 [16857] LOG:  database system is shut down
+2025-04-30 22:41:43.290 +08 [17039] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:41:43.294 +08 [17039] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:41:43.294 +08 [17039] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:41:43.294 +08 [17039] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:41:43.294 +08 [17039] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:41:43.295 +08 [17039] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:41:43.295 +08 [17039] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:41:43.296 +08 [17039] LOG:  database system is shut down
+2025-04-30 22:51:41.136 +08 [17455] LOG:  starting PostgreSQL 14.17 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-04-30 22:51:41.140 +08 [17455] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-04-30 22:51:41.140 +08 [17455] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:51:41.140 +08 [17455] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-04-30 22:51:41.140 +08 [17455] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-04-30 22:51:41.140 +08 [17455] WARNING:  could not create listen socket for "localhost"
+2025-04-30 22:51:41.140 +08 [17455] FATAL:  could not create any TCP/IP sockets
+2025-04-30 22:51:41.141 +08 [17455] LOG:  database system is shut down
