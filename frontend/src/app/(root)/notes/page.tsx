@@ -11,11 +11,6 @@ interface NoteType {
   created_at: string;
 }
 
-interface NoteProps {
-  note: NoteType;
-  onDelete: (id: NoteType["id"]) => Promise<void>;
-}
-
 const NotesPage: React.FC = () => {
   const [notes, setNotes] = useState<NoteType[]>([]);
   const [content, setContent] = useState<string>("");

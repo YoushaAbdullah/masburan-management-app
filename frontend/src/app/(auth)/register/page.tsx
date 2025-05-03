@@ -20,13 +20,13 @@ const Register = () => {
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
             {/* Integrated Form Component */}
-            <Form route="/api/register/" method="register" />
+            <Form route="/api/user/register/" method="register" />
           </div>
         </div>
       </div>
       <div className="relative hidden bg-muted lg:block">
         <img
-          src="/placeholder.svg"
+          src="https://placeholder.pics/svg/300.svg"
           alt="Image"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />

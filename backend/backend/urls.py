@@ -26,4 +26,14 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include("api.urls")),
+    path("project/",include("project.urls")),
+    path("boq/",include("boq.urls")),
+    path("delivery-order/",include("delivery_order.urls")),
+    path("delivery-order-details/",include("delivery_order_details.urls")),
+    path("invoice/",include("invoice.urls")),
+    path("invoice-details/",include("invoice_details.urls")),
+    path("inventory/", include("inventory.urls")),
+    path("external-inventory/",include("external_inventory.urls")),
+    path("item-list/", include("item_list.urls")),
+
 ]

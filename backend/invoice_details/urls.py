@@ -6,7 +6,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('invoice-details/create/', InvoiceDetailsCreateView.as_view(), name='invoice-details-create'),
-    path('invoice-details/<int:pk>/update/', InvoiceDetailsUpdateView.as_view(), name='invoice-details-update'),
-    path('invoice-details/<int:pk>/delete/', InvoiceDetailsDeleteView.as_view(), name='invoice-details-delete'),
+    path('create/', InvoiceDetailsCreateView.as_view(), name='invoice-details-create'),
+    path('<int:pk>/update/', InvoiceDetailsUpdateView.as_view(), name='invoice-details-update'),
+    path('<int:pk>/delete/', InvoiceDetailsDeleteView.as_view(), name='invoice-details-delete'),
 ]

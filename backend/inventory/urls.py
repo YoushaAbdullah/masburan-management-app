@@ -6,7 +6,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('inventory/create/', InventoryCreateView.as_view(), name='inventory-create'),
-    path('inventory/<int:pk>/update/', InventoryUpdateView.as_view(), name='inventory-update'),
-    path('inventory/<int:pk>/delete/', InventoryDeleteView.as_view(), name='inventory-delete'),
+    path('create/', InventoryCreateView.as_view(), name='inventory-create'),
+    path('<int:pk>/update/', InventoryUpdateView.as_view(), name='inventory-update'),
+    path('<int:pk>/delete/', InventoryDeleteView.as_view(), name='inventory-delete'),
 ]

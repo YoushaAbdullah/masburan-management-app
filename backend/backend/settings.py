@@ -27,6 +27,7 @@ from datetime import timedelta
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -67,7 +68,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.postgres",
     "api",
+    "imagefield",
     "rest_framework",
     "corsheaders",
     "delivery_order_details",
@@ -79,6 +82,7 @@ INSTALLED_APPS = [
     "item_list",
     "project",
     "boq",
+    "fdp_report",
 ]
 
 MIDDLEWARE = [
