@@ -8,8 +8,15 @@ import { DataTable } from "@/components/data-table";
 import { SectionCards } from "@/components/section-cards";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-
+import { z } from "zod";
 import data from "./data.json";
+import {
+  BoqType,
+  ProjectType,
+  InventoryType,
+  CombinedDataType,
+  combined_schema,
+} from "@/lib/validation";
 
 // Define interfaces for each data type
 interface Project {
@@ -94,6 +101,16 @@ interface ItemList {
   description: string;
   unitPrice: number;
 }
+export const boq_schema = z.object({
+  id: z.number(),
+  job_description: z.string(),
+  mm_no: z.string(),
+  project: z.string(),
+  quantity: z.string(),
+  unit_rate: z.string(),
+  uom: z.string(),
+  boq_date: z.string().date(),
+});
 
 // Define a type for the fetched data
 // interface FetchedData {
@@ -110,24 +127,7 @@ interface ItemList {
 // }
 
 const DashboardPage: React.FC = () => {
-  const [notes, setFetchedData] = useState<BOQ[]>([]);
-  const [material, setMaterial] = useState<string>("");
-  const [quantity, setQuantity] = useState<number>(0);
-  const [unitPrice, setUnitPrice] = useState<string>("");
-  const [totalCost, setTotalCost] = useState<string>("");
-
-  // const [fetchedData, setFetchedData] = useState<FetchedData>({
-  //   project: [],
-  //   boq: [],
-  //   deliveryOrder: [],
-  //   deliveryOrderDetails: [],
-  //   invoice: [],
-  //   invoiceDetails: [],
-  //   fdpReport: [],
-  //   inventory: [],
-  //   externalInventory: [],
-  //   itemList: [],
-  // });
+  const [fetchedData, setFetchedData] = useState<CombinedDataType | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -138,102 +138,29 @@ const DashboardPage: React.FC = () => {
       const token = localStorage.getItem("accessToken"); // Retrieve the token from localStorage
       console.log("Access Token:", token); // Log the access token to the console
 
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/boq/create/`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
-          },
-        }
-      );
-      setFetchedData(response.data);
-      console.log("Fetched Data:", response.data); // Log the fetched data to the console
+      const [boqRes, inventoryRes] = await Promise.all([
+        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/boq/create/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        // axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/create/`, {
+        //   headers: { Authorization: `Bearer ${token}` },
+        // }),
+        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/inventory/create/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+      ]);
+
+      const parsed = combined_schema.parse({
+        boq: boqRes.data,
+        //project: projectRes.data,
+        inventory: inventoryRes.data,
+      });
+      setFetchedData(parsed);
+      console.log("Fetched and parsed data:", parsed);
     } catch (error) {
-      console.error("Error fetching boq:", error);
-      alert("Failed to fetch boq.");
+      console.error("Error fetching data:", error);
     }
   };
-
-  // const endpoints = [
-  //   {
-  //     key: "project",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/project/`,
-  //   },
-  //   { key: "boq", url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/boq/` },
-  //   {
-  //     key: "deliveryOrder",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/delivery-order/`,
-  //   },
-  //   {
-  //     key: "deliveryOrderDetails",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/delivery-order-details/`,
-  //   },
-  //   {
-  //     key: "invoice",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/invoice/`,
-  //   },
-  //   {
-  //     key: "invoiceDetails",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/invoice-details/`,
-  //   },
-  //   {
-  //     key: "fdpReport",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/fdp-report/`,
-  //   },
-  //   {
-  //     key: "inventory",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/inventory/`,
-  //   },
-  //   {
-  //     key: "externalInventory",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/external-inventory/`,
-  //   },
-  //   {
-  //     key: "itemList",
-  //     url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/item-list/`,
-  //   },
-  // ];
-
-  // const results = await Promise.all(
-  //   endpoints.map(async (endpoint) => {
-  //     const response = await axios.get(endpoint.url, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`, // Include the token in the Authorization header
-  //       },
-  //     });
-  //     return { key: endpoint.key, data: response.data };
-  //   })
-  // );
-
-  // const data = results.reduce(
-  //   (acc, result) => {
-  //     // Type narrowing ensures we only assign known keys
-  //     if (result.key in acc) {
-  //       acc[result.key as keyof FetchedData] = result.data;
-  //     }
-  //     return acc;
-  //   },
-  //   {
-  //     project: [],
-  //     boq: [],
-  //     deliveryOrder: [],
-  //     deliveryOrderDetails: [],
-  //     invoice: [],
-  //     invoiceDetails: [],
-  //     fdpReport: [],
-  //     inventory: [],
-  //     externalInventory: [],
-  //     itemList: [],
-  //   } as FetchedData
-  // );
-
-  //     setFetchedData(data);
-  //     console.log("Fetched Data:", data);
-  //   } catch (err) {
-  //     console.error("Error fetching data:", err);
-  //     setError("Failed to fetch data. Please try again later.");
-  //   }
-  // };
 
   return (
     <SidebarProvider
@@ -262,4 +189,5 @@ const DashboardPage: React.FC = () => {
     </SidebarProvider>
   );
 };
+
 export default DashboardPage;
