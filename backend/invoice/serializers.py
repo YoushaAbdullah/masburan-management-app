@@ -6,7 +6,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
         model = Invoice
         fields = [
             'id', 'item_code', 'description', 'uom', 'unit_price', 
-            'quantity', 'project'
+            'quantity',"invoice_details", 'project'
         ]
         extra_kwargs = {
             'project': {'read_only': True}

@@ -6,7 +6,7 @@ class InvoiceDetailsSerializer(serializers.ModelSerializer):
         model = InvoiceDetails
         fields = [
             'id', 'inv_no', 'po_no', 'date', 'project_location', 'attn_to', 'project_codename',
-            'payment_terms', 'account', 'project', 'percentage',
+            'payment_terms', 'account', 'project', 
             'invoice_to_company_location', 'invoice_percentage', 'invoice_company_name'
         ]
         extra_kwargs = {

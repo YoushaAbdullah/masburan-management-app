@@ -7,7 +7,7 @@ from .models import ExternalInventory
 from .serializers import ExternalInventorySerializer
 
 # Create
-class ExternalInventoryCreateView(generics.CreateAPIView):
+class ExternalInventoryCreateView(generics.ListCreateAPIView):
     queryset = ExternalInventory.objects.all()
     serializer_class = ExternalInventorySerializer
     permission_classes = [IsAuthenticated]

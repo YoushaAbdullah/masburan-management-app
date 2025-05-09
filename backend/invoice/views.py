@@ -7,7 +7,7 @@ from .models import Invoice
 from .serializers import InvoiceSerializer
 
 # Create View
-class InvoiceCreateView(generics.CreateAPIView):
+class InvoiceCreateView(generics.ListCreateAPIView):
     queryset = Invoice.objects.all()
     serializer_class = InvoiceSerializer
     permission_classes = [IsAuthenticated]

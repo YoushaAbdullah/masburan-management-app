@@ -7,7 +7,7 @@ from .models import ItemList
 from .serializers import ItemListSerializer
 
 # Create View
-class ItemListCreateView(generics.CreateAPIView):
+class ItemListCreateView(generics.ListCreateAPIView):
     queryset = ItemList.objects.all()
     serializer_class = ItemListSerializer
     permission_classes = [IsAuthenticated]

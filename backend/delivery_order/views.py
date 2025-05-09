@@ -6,7 +6,7 @@ from .models import DeliveryOrder
 from .serializers import DeliveryOrderSerializer
 
 # Create a new DeliveryOrder
-class DeliveryOrderCreateView(generics.CreateAPIView):
+class DeliveryOrderCreateView(generics.ListCreateAPIView):
     queryset = DeliveryOrder.objects.all()
     serializer_class = DeliveryOrderSerializer
     permission_classes = [IsAuthenticated]

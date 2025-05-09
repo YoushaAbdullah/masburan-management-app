@@ -6,7 +6,7 @@ class DeliveryOrderSerializer(serializers.ModelSerializer):
         model = DeliveryOrder
         fields = [
             "id", "item_code", "description", "uom", 
-            "unit_price", "quantity", "percentage", "project"
+            "unit_price", "quantity", "project","delivery_order_details"
         ]
         extra_kwargs = {
             "project": {"read_only": True}
