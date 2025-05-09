@@ -11,6 +11,9 @@ class DeliveryOrderDetailsCreateView(generics.CreateAPIView):
     queryset = DeliveryOrderDetails.objects.all()
     serializer_class = DeliveryOrderDetailsSerializer
     permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+        user = self.request.user
+        return DeliveryOrderDetails.objects.all()
 
     def perform_create(self, serializer):
         if serializer.is_valid():

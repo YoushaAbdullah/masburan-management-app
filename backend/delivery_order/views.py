@@ -10,6 +10,9 @@ class DeliveryOrderCreateView(generics.CreateAPIView):
     queryset = DeliveryOrder.objects.all()
     serializer_class = DeliveryOrderSerializer
     permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+        user = self.request.user
+        return DeliveryOrder.objects.all()
 
     def perform_create(self, serializer):
         if serializer.is_valid():

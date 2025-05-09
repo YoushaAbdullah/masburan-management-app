@@ -3,14 +3,17 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from .models import BesterInventory
-from .serializers import BesterInventorySerializer
+from .models import ExternalInventory
+from .serializers import ExternalInventorySerializer
 
 # Create
-class BesterInventoryCreateView(generics.CreateAPIView):
-    queryset = BesterInventory.objects.all()
-    serializer_class = BesterInventorySerializer
+class ExternalInventoryCreateView(generics.CreateAPIView):
+    queryset = ExternalInventory.objects.all()
+    serializer_class = ExternalInventorySerializer
     permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+        user = self.request.user
+        return ExternalInventory.objects.all()
 
     def perform_create(self, serializer):
         if serializer.is_valid():
@@ -19,9 +22,9 @@ class BesterInventoryCreateView(generics.CreateAPIView):
             print(serializer.errors)
 
 # Update
-class BesterInventoryUpdateView(generics.UpdateAPIView):
-    queryset = BesterInventory.objects.all()
-    serializer_class = BesterInventorySerializer
+class ExternalInventoryUpdateView(generics.UpdateAPIView):
+    queryset = ExternalInventory.objects.all()
+    serializer_class = ExternalInventorySerializer
     permission_classes = [IsAuthenticated]
 
     def perform_update(self, serializer):
@@ -31,9 +34,9 @@ class BesterInventoryUpdateView(generics.UpdateAPIView):
             print(serializer.errors)
 
 # Delete
-class BesterInventoryDeleteView(generics.DestroyAPIView):
-    queryset = BesterInventory.objects.all()
-    serializer_class = BesterInventorySerializer
+class ExternalInventoryDeleteView(generics.DestroyAPIView):
+    queryset = ExternalInventory.objects.all()
+    serializer_class = ExternalInventorySerializer
     permission_classes = [IsAuthenticated]
 
     def perform_destroy(self, instance):

@@ -1,9 +1,9 @@
 # Register your models here.
 from django.contrib import admin
-from .models import BesterInventory
+from .models import ExternalInventory
 
-@admin.register(BesterInventory)
-class BesterInventoryAdmin(admin.ModelAdmin):
+@admin.register(ExternalInventory)
+class ExternalInventoryAdmin(admin.ModelAdmin):
     list_display = (
         'id', 'material_name', 'specification', 'unit', 'quantity_ordered', 
         'quantity_ordered_unit_price', 'quantity_stock', 'quantity_stock_unit_price', 

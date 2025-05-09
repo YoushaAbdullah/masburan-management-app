@@ -11,6 +11,9 @@ class InvoiceDetailsCreateView(generics.CreateAPIView):
     queryset = InvoiceDetails.objects.all()
     serializer_class = InvoiceDetailsSerializer
     permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+        user = self.request.user
+        return InvoiceDetails.objects.all()
 
     def perform_create(self, serializer):
         if serializer.is_valid():

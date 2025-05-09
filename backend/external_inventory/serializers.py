@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import BesterInventory
+from .models import ExternalInventory
 
-class BesterInventorySerializer(serializers.ModelSerializer):
+class ExternalInventorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = BesterInventory
+        model = ExternalInventory
         fields = [
             "id", "material_name", "specification", "unit", "quantity_ordered", 
             "quantity_ordered_unit_price", "quantity_stock", "quantity_stock_unit_price", 

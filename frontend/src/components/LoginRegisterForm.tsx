@@ -34,7 +34,7 @@ const Form: React.FC<FormProps> = ({ route, method }) => {
       if (method === "login") {
         localStorage.setItem("accessToken", res.data.access);
         localStorage.setItem("refreshToken", res.data.refresh);
-        router.push("/"); // Redirect to the home page
+        router.push("/dashboard/"); // Redirect to the home page
       } else {
         router.push("/login"); // Redirect to the login page after registration
       }

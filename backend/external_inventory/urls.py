@@ -1,12 +1,12 @@
 from django.urls import path
 from .views import (
-    BesterInventoryCreateView, 
-    BesterInventoryUpdateView, 
-    BesterInventoryDeleteView
+    ExternalInventoryCreateView, 
+    ExternalInventoryUpdateView, 
+    ExternalInventoryDeleteView
 )
 
 urlpatterns = [
-    path('create/', BesterInventoryCreateView.as_view(), name='besterinventory-create'),
-    path('<int:pk>/update/', BesterInventoryUpdateView.as_view(), name='besterinventory-update'),
-    path('<int:pk>/delete/', BesterInventoryDeleteView.as_view(), name='besterinventory-delete'),
+    path('create/', ExternalInventoryCreateView.as_view(), name='externalinventory-create'),
+    path('<int:pk>/update/', ExternalInventoryUpdateView.as_view(), name='externalinventory-update'),
+    path('<int:pk>/delete/', ExternalInventoryDeleteView.as_view(), name='externalinventory-delete'),
 ]

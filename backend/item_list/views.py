@@ -11,6 +11,9 @@ class ItemListCreateView(generics.CreateAPIView):
     queryset = ItemList.objects.all()
     serializer_class = ItemListSerializer
     permission_classes = [IsAuthenticated]
+    def get_queryset(self):
+        user = self.request.user
+        return ItemList.objects.all()
 
     def perform_create(self, serializer):
         if serializer.is_valid():
