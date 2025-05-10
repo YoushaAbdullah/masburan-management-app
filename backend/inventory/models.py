@@ -25,6 +25,14 @@ SPECIFICATION_CHOICES = [
         ('pole accessories', 'Pole Accessories'),
         ('miscellaneous', 'Miscellaneous'),
     ]
+STATUS_CHOICES = [
+        ('requested', 'Requested'),
+        ('ordered', 'Ordered'),
+        ('delivered', 'Delivered'),
+        ('in stock', 'In Stock'),
+        ('in use', 'In Use'),
+        ('returned', 'Returned'),
+    ]
 
 class Inventory(models.Model):
     material_name = models.CharField(max_length=200)
@@ -39,6 +47,7 @@ class Inventory(models.Model):
     contact_no_supplier = models.CharField(max_length=50)
     delivery_method = models.CharField(max_length=50, choices=DELIVERY_METHOD_CHOICES)
     delivery_details = models.CharField(max_length=200)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
     def __str__(self):

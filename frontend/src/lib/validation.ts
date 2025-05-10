@@ -37,6 +37,7 @@ export const external_inventory_schema = z.object({
   contact_no_supplier: z.string(),
   delivery_method: z.string(),
   delivery_details: z.string(),
+  status: z.string(),
   project: z.number(),
 });
 // Inventory schema
@@ -54,6 +55,7 @@ export const inventory_schema = z.object({
   contact_no_supplier: z.string(),
   delivery_method: z.string(),
   delivery_details: z.string(),
+  status: z.string(),
   project: z.number(),
 });
 // Delivery order schema
